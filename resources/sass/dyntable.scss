@@ -1,0 +1,102 @@
+.DynTableContainer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 4em 4em 1fr 4em;
+}
+
+.DynTableSearch {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.DynTableFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.DynTableBody,
+.DynTableHeader {
+    display: grid;
+    // grid-template-columns: 1fr 5fr 20fr 10fr 3fr 3fr;
+    // grid-auto-rows: 4em;
+    text-align: center;
+    grid-auto-flow: dense;
+    gap: 0;
+}
+
+.DynTableHeader {
+    .colDynTable {
+        background-color: $body-color;
+    }
+    color: $primary;
+}
+
+.colDynTable {
+    margin: auto;
+    border-top: 1px solid #383838;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.dyntable-editing {
+        background-color: $body-bg;
+    }
+}
+
+@for $i from 1 through 12 {
+    .colDynTable-#{$i} {
+        grid-column: #{$i} / span 1;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// .DynTableBody, .DynTableHeader {
+//     display: grid;
+//     grid-template-columns: 1fr [expand] 5fr [icode] 20fr [nama] 10fr [harga] 3fr [aktif] 3fr [edit];
+//     grid-auto-rows: 4em;
+//     text-align: center;
+//     grid-auto-flow: dense;
+//     gap: 0;
+//     // background-color: aqua;
+// }
+// .DynTableHeader {
+//     .colExpand, .colIcode, .colNama, .colHarga, .colAktif, .colEdit, .colSpan  {
+//         background-color: map-get($theme-colors, 'body-color');
+//     }
+//     color: map-get($theme-colors, 'primary');
+// }
+// .colExpand, .colIcode, .colNama, .colHarga, .colAktif, .colEdit, .colSpan  {
+//     margin: auto;
+//     border-top: 2px solid map-get($map: $theme-colors, $key: 'body-color');
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     // background-color: bisque;
+// }
+// .colExpand {
+//     grid-column: 1 / span 1;
+// }
+// .colIcode {
+//     grid-column: 2 / span 1;
+// }
+// .colNama {
+//     grid-column: 3 / span 1;
+// }
+// .colHarga {
+//     grid-column: 4 / span 1;
+// }
+// .colAktif {
+//     grid-column: 5 / span 1;
+// }
+// .colEdit {
+//     grid-column: 6 / span 1;
+// }
+// .colSpan {
+//     grid-column: 1 / span 6;
+//     grid-row: span 2;
+//     border-top: none;
+// }
